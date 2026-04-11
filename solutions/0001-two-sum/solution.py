@@ -1,8 +1,8 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        dec = {}
+        dic = {}
         for i in range(len(nums)):
-            deff = target-nums[i]
-            if deff in dec:
-                return [dec[deff],i]
-            dec[nums[i]] = i
+            dif = target-nums[i]
+            if dif in dic:
+                return [dic[dif],i]
+            dic[nums[i]] = i
