@@ -1,0 +1,13 @@
+class Solution:
+    def jump(self, nums: List[int]) -> int:
+        jump = 0
+        left = 0
+        right = 0
+        while right < len(nums)-1:
+            mx = 0
+            for i in range(left,right+1):
+                mx = max(mx,nums[i]+i)
+            left = right+1
+            right = mx
+            jump += 1
+        return jump
