@@ -11,17 +11,17 @@ class Node:
 class Solution:
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
         if not root:
-            return None
+            return root
         q = deque([root])
         while q:
             row = []
             for _ in range(len(q)):
                 val = q.popleft()
-                row.append(val)
                 if val.left:
                     q.append(val.left)
                 if val.right:
                     q.append(val.right)
+                row.append(val)
             for i in range(len(row)-1):
                 row[i].next = row[i+1]
         return root
