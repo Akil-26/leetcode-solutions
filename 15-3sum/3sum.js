@@ -7,16 +7,16 @@ var threeSum = function(nums) {
     const res = [];
     const n = nums.length;
 
-    for(i=0; i <= n; i++){
-        if (i>0 && nums[i] == nums[i-1]){
+    for([i,num] of nums.entries()){
+        if (i>0 && num == nums[i-1]){
             continue
         } 
-        
+
         left = i+1
         right = n-1
 
         while(left < right){
-            s = nums[i] + nums[left] + nums[right]
+            s = num + nums[left] + nums[right]
             if (s<0){
                 left ++
             }
@@ -24,7 +24,7 @@ var threeSum = function(nums) {
                 right--
             }
             else{
-                res.push([nums[i],nums[left],nums[right]]);
+                res.push([num,nums[left],nums[right]]);
                 left++
                 right--
                 while(left < right && nums[left] == nums[left-1]){
